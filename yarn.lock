@@ -492,6 +492,11 @@ estree-walker@^2.0.1:
   resolved "https://registry.yarnpkg.com/estree-walker/-/estree-walker-2.0.2.tgz#52f010178c2a4c117a7757cfe942adb7d2da4cac"
   integrity sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==
 
+export-from-json@^1.7.2:
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/export-from-json/-/export-from-json-1.7.2.tgz#574424eede06687d53c9a8127a706285cfa5c49e"
+  integrity sha512-AvjenglU3qqiXWnNz69KvTbZ6m1XhBiauSvyR+0KayPHCiWWhR0dQmaHJCHLWcFHPXeZ3/2PlgPKtGLLMApYmg==
+
 fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
