@@ -23,7 +23,6 @@ const App = () => {
 
   return (
     <div className="container-fluid">
-      
       <Header columns={columns} rows={rows} addColumn={addColumn} addRow={addRow}/>
       <Table columns={columns} rows={rows} addColumn={addColumn} addRow={addRow} setColumns={setColumns} setRows={setRows}/>
     </div>

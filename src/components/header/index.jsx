@@ -18,8 +18,8 @@ const Header = ({ columns, rows, addColumn, addRow }) => {
                 <button className='ms-1 btn btn-outline-dark' onClick={() => addColumn()}>Add Column</button>
                 <button className='btn btn-outline-dark' onClick={() => addRow()}>Add Row</button>
 
-                <SaveToJSON />
-                <SaveToExcel />
+                <SaveToJSON rows={rows} columns={columns} />
+                <SaveToExcel rows={rows} columns={columns} />
             </div>
         </div>
     </div>
