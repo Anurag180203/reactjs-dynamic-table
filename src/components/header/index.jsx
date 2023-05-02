@@ -3,7 +3,7 @@ import SaveToJSON from './components/SaveToJSON'
 import SaveToExcel from './components/SaveToExcel'
 
 
-const Header = () => {
+const Header = ({ columns, rows, addColumn, addRow }) => {
   return (
     <div className="row mb-5">
         <div className="col-md-10 mt-5 mx-auto d-flex justify-content-between align-items-center">
@@ -12,11 +12,11 @@ const Header = () => {
             </a>
 
             <div className='d-flex align-items-center justify-content-end gap-1'>
-                <p className='my-0'>Colums : 0</p>
-                <p className='my-0'>Rows : 0</p>
+                <p className='my-0'>Columns : {columns.length}</p>
+                <p className='my-0'>Rows : {rows.length}</p>
 
-                <button className='ms-1 btn btn-outline-dark'>Add Column</button>
-                <button className='btn btn-outline-dark'>Add Row</button>
+                <button className='ms-1 btn btn-outline-dark' onClick={() => addColumn()}>Add Column</button>
+                <button className='btn btn-outline-dark' onClick={() => addRow()}>Add Row</button>
 
                 <SaveToJSON />
                 <SaveToExcel />
