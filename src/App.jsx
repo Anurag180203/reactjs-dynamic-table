@@ -1,9 +1,11 @@
 import "./App.css";
+import { Header,Table } from './components';
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Welcome To My First Course!</h1>
+    <div className="container-fluid">
+      <Header />
+      <Table />
     </div>
   );
 };
