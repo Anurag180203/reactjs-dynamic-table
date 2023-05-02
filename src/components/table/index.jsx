@@ -1,4 +1,5 @@
 import React from 'react'
+import { toast } from 'react-toastify';
 
 const Table = ({ columns, rows, addRow, addColumn, setColumns, setRows }) => {
 
@@ -14,11 +15,15 @@ const Table = ({ columns, rows, addRow, addColumn, setColumns, setRows }) => {
     }
 
     const deleteColumn = (index) => {
-        if(columns.length === 1) return alert('Minimum 1 column required');
-        setColumns((prevColumns) => prevColumns.filter((column,id) => id !== index));
-        if(rows.length > 0)
+        if(columns.length > 1)
         {
-            setRows((prevRows) => prevRows.map((row) => row.filter((column,id) => id !== index)));
+            setColumns((prevColumns) => prevColumns.filter((column,id) => id !== index));
+            if(rows.length > 0)
+            {
+                setRows((prevRows) => prevRows.map((row) => row.filter((column,id) => id !== index)));
+            }
+        } else {
+             toast.dark('Minimum 1 column required');
         }
     }
 
@@ -29,8 +34,8 @@ const Table = ({ columns, rows, addRow, addColumn, setColumns, setRows }) => {
   return (
     <div className="row">
         <div className='col-md-10 mx-auto mt-5'>
-            <table className='table table-bordered'>
-                <thead className='bg-dark text-white'>
+            <table className='table table-bordered table-responsive'>
+                <thead>
                     <tr className='bg-white'>
                         <th></th>
                         {columns.map((column,index) => (
@@ -44,10 +49,10 @@ const Table = ({ columns, rows, addRow, addColumn, setColumns, setRows }) => {
                         ))}                        
                         <th></th>
                     </tr>
-                    <tr>
-                        <th scope='col' className='text-center'>Sno.</th>
+                    <tr className='bg-dark text-white'>
+                        <th scope='col' className='bg-dark text-center'>Sno.</th>
                         {columns.map((column,index) => (
-                            <th scope='col' className='text-center' key={index * 455465}>
+                            <th scope='col' className='bg-dark text-center' key={index * 455465}>
                             <input type="text" 
                             onChange={(e) => handleColumnChange(e.target.value,index)}
                             className='form-control text-center bg-transparent text-white border-transparent border-0' 
@@ -56,7 +61,7 @@ const Table = ({ columns, rows, addRow, addColumn, setColumns, setRows }) => {
                             />
                             </th>
                         ))}
-                        <th scope='col' className='text-center'>
+                        <th scope='col' className='bg-dark text-center'>
                             <button className='btn btn-outline-light btn-sm' type="button" onClick={() => addColumn()}>Add column</button>
                         </th>
                     </tr>
